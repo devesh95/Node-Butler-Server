@@ -1,0 +1,56 @@
+{
+  "MockDataCollections": {
+    "GETRequestSimple": {
+      "_id": "54c1321303069f7ee53adcfb",
+      "requestMethod": "GET",
+      "requestUrl": "/hello",
+      "requestHeaders": {},
+      "queryParams": {},
+      "requestPayload": {},
+      "mockResponse": {
+        "data": "hello"
+      }
+    },
+    "GETRequestWithQP": {
+      "_id": "54c1321303069f7ee53adcfc",
+      "requestMethod": "GET",
+      "requestUrl": "/hello",
+      "requestHeaders": {},
+      "queryParams": {
+        "test": "true"
+      },
+      "requestPayload": {},
+      "mockResponse": {
+        "data": "hello, with query params"
+      }
+    },
+    "POST": {
+      "_id": "54c1321303069f7ee53adcfd",
+      "requestMethod": "POST",
+      "requestUrl": "/hello",
+      "requestHeaders": {},
+      "queryParams": {},
+      "requestPayload": {
+        "test": "true"
+      },
+      "mockResponse": {
+        "data": "hello, via a POST request"
+      }
+    },
+    "POST": {
+      "_id": "54c1321303069f7ee53adcfd",
+      "requestMethod": "POST",
+      "requestUrl": "/hello",
+      "requestHeaders": {
+        "devesh": "dayal"
+      },
+      "queryParams": {},
+      "requestPayload": {
+        "test": "true"
+      },
+      "mockResponse": {
+        "data": "hello, via a POST request, with headers for Devesh Dayal"
+      }
+    }
+  }
+}

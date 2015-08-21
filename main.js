@@ -11,7 +11,7 @@ router.get('/*', function(req, res) {
 });
 
 router.post('/*', function(req, res) {
-	
+	getResponseFromDbOfType('GET', req, res);
 });
 
 var getResponseFromDbOfType = function(type, req, res) {

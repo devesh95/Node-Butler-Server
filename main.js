@@ -7,21 +7,16 @@ var app = express();
 var router = express.Router();
 
 router.get('/*', function(req, res) {
-	mockDataDb.findMockEntryByRequestData('GET', req.url.split('?')[0], req.headers, req.query, {}, function(err, entry) {
-		if (err) {
-			res.status(500).send('Cannot connect to mock database');
-		} else {
-			if (entry) {
-				res.send(entry.mockResponse);
-			} else {
-				res.sendStatus(404);
-			}
-		}
-	});
+    getResponseFromDbOfType('GET', req, res);
 });
 
 router.post('/*', function(req, res) {
-	mockDataDb.findMockEntryByRequestData('POST', req.url.split('?')[0], req.headers, req.query, req.body, function(err, entry) {
+	
+});
+
+var getResponseFromDbOfType = function(type, req, res) {
+    var standardisedType = type.toUpperCase();
+    mockDataDb.findMockEntryByRequestData(standardisedType, req.url.split('?')[0], req.headers, req.query, req.body, function(err, entry) {
 		if (err) {
 			res.status(500).send('Cannot connect to mock database');
 		} else {
@@ -32,7 +27,7 @@ router.post('/*', function(req, res) {
 			}
 		}
 	});
-});
+};
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
